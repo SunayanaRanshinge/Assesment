@@ -1,0 +1,128 @@
+database:is acollection of system trhat has a collection of data .
+relatiobnal database store data easily retriveed ,managed,and update.
+
+What is sql:
+Sql:-structued query language.
+sql is the language to communicate with databsees.
+
+
+4 types of sql command
+1): data Defination language:
+  create,alter,Drop truncate
+
+2. DML: data manipulation language:
+  select.insert, update, delete
+
+3. Data control langauge DCL:-
+     grant, revoke
+
+4 trasaction control language (tcl):
+  commit, rollback
+
+-------------------------------------------------------
+sql application
+CURD
+
+create update read delete
+
+--------------------------------------------------------------------------------
+difference between sql and nosql
+
+sql-relational database, data store in the table , 
+    sql databace have fixed or static or predefine schema
+    low performance with huge volume of data
+    mysql,db2,oracle,sql-server
+
+nosql -nonrelational databse, data store in key:value pair, document, graph databse,
+   nosql have dynamic schema,  Easily work with huge volume of data
+   mongodb
+
+
+--------------------------------------------------------------------
+Datatype:
+string: char, varchar
+Numeric :int,float, 
+bool :True and false
+date& time :date ,datetime
+
+---------------------------------------------------------------
+Contraints:
+contraints are used to specify rules for data in the table.
+this ensure the accuracy and relibility  of the data in the table.
+
+syntax:
+    create table table_name(
+      col1 datatype contraints
+      -----
+)
+
+
+Commonly used contraints
+
+1:-Not Null:-Ensure that the column cannot have null value.
+2:Unique :-ensure that all values in a column are different.
+3.Default:-set a default value for column if no value is specified.
+4.primary key:-combination of not null and unique
+5.foreign key :-a foreign key is a column used to link between two more tables together.
+      a table have any number of forein key ,can contain duplicate and null values
+
+6.check :- ensure thet the value in a column satisfies a specific condition
+
+
+
+--------------------------------------------------------------------
+
+DBMS provide various level abstraction
+1.pysical level :it is the lowest level of abtraction which describe how the data is actully stored
+
+2.logical level: it is the next higher level of abtraction that describe what data is stored in the database 
+whet relationaship exists between varies data element in the database
+
+3.view level: It is use to simplify the user interaction with the system   
+
+-------------------------------------------------------------
+Normalization:
+it is a database  design technique that organize table in a manner that reduce redudency and dependancy of data
+- to avoid insertion ,deletion, updation anomaly
+
+#1Nf, 2NF,3NF ,BCNF,
+
+First normal form 1NF
+-an column of atable cannot hold multiple value
+-it should hold only automic value.
+-each records needs to be unique
+
+
+2NF
+-it should be in the 1nf
+-
+
+
+  
+create database first;
+show databases;
+use first;
+create table Employee(
+empid int,
+name varchar(30),
+address varchar(255),
+salary int
+);
+
+insert into Employee values(104,"radha","nashik",67890);
+insert into Employee values(105,"sita","satara",34567);
+insert into Employee values(106,"anita","nagpur",234567);
+select distinct * from Employee;
+
+select * from Employee where address="pune";
+select * from Employee where salary  between 10000 and 20000;
+select * from Employee where address like "%ne";
+select * from Employee where address like "ne%";
+select * from Employee where address like "__ne";
+select * from Employee  where address like "%gp%";
+
+select * from Employee where address in("Nagpur","pune");
+select * from Employee ;
+select * from Employee order by salary asc;
+select * from Employee order by salary desc;
+select * from Employee where salary>50000  order by salary desc;
